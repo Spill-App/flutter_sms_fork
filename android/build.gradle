@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.4'
+        classpath 'com.android.tools.build:gradle:7.4.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -38,6 +38,14 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlin {
+        jvmToolchain(17)
     }
 }
 
